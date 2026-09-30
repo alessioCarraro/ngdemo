@@ -1,6 +1,6 @@
 {
-  "name": "ngdemo",
-  "short_name": "ngdemo",
+  "name": "Pokémon NgDemo",
+  "short_name": "Pokédex",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
@@ -53,5 +53,7 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
-  ]
+  ],
+  "theme_color": "#FF0000",
+  "background_color": "#FFFFFF"
 }

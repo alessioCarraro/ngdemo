@@ -9,9 +9,14 @@ export const appConfig: ApplicationConfig = {
   providers: [
     // ...quello che c'è già (router, zoneless, ecc.)
     provideRouter(routes),
-    provideHttpClient(), provideServiceWorker('ngsw-worker.js', {
-            enabled: !isDevMode(),
-            registrationStrategy: 'registerWhenStable:30000'
-          }),
+    provideHttpClient(),
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
 };
