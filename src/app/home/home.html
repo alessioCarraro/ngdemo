@@ -1,0 +1,15 @@
+<section>
+  <h2>Prodotti</h2>
+  <button (click)="aggiungiProdotto()">+ Aggiungi prodotto</button>
+
+  @for (prodotto of prodotti(); track prodotto.id) {
+    <article class="prodotto" [class.non-disponibile]="!prodotto.disponibile">
+      <span>{{ prodotto.nome }}</span>
+      <span>{{ prodotto.prezzo | currency: 'EUR' }}</span>
+      <span>{{ prodotto.disponibile ? 'Disponibile' : 'Esaurito' }}</span>
+      <button (click)="toggleDisponibilita(prodotto.id)">Cambia disponibilità</button>
+    </article>
+  } @empty {
+    <p>Nessun prodotto disponibile.</p>
+  }
+</section>

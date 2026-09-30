@@ -1,0 +1,21 @@
+<h1>Cerca un Pokémon</h1>
+
+<input
+  type="text"
+  [value]="nomePokemon()"
+  (input)="onNomeInput($event)"
+  placeholder="Es: pikachu"
+/>
+<button (click)="cerca()" [disabled]="caricamento()">Cerca</button>
+
+@if (caricamento()) {
+  <p>Caricamento in corso...</p>
+}
+
+@if (errore()) {
+  <p class="errore">{{ errore() }}</p>
+}
+
+@if (pokemon(); as p) {
+  <app-pokemon-card [pokemon]="p" />
+}
